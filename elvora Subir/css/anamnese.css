@@ -1,0 +1,149 @@
+﻿        :root {
+            --verde-elvora: #2D5A43;
+            --verde-claro: rgba(45, 90, 67, 0.1);
+            --dourado: #C6B00A;
+            --texto: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f9f9f7;
+        }
+
+        /* MENU LATERAL */
+        nav {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            z-index: 10;
+        }
+
+        .logo-sidebar { width: 100%; max-width: 220px; margin-bottom: 30px; }
+
+        .menu-item {
+            text-decoration: none; color: #666; padding: 12px 15px; margin-bottom: 5px;
+            border-radius: 10px; display: flex; align-items: center; font-weight: 500; transition: 0.3s;
+        }
+
+        .menu-item.active { background-color: var(--verde-elvora); color: white; }
+        .menu-item i { margin-right: 12px; width: 20px; text-align: center; }
+        .menu-item:hover:not(.active) { background-color: var(--verde-claro); color: var(--verde-elvora); }
+
+        /* ÁREA PRINCIPAL */
+        main {
+            flex: 1; padding: 40px; overflow-y: auto; position: relative;
+            background-image: url('../Imagem/chat GPT fundo.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+
+        main::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.88); z-index: 1;
+        }
+
+        .container { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+
+        .form-card {
+            background: white; padding: 35px; border-radius: 20px;
+            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; color: var(--verde-elvora); font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--verde-elvora); border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 25px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; color: #555; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 1rem; }
+
+        /* ESTILO DO QUESTIONÁRIO MÉDICO */
+        .section-title { color: var(--dourado); font-weight: bold; text-transform: uppercase; font-size: 0.85rem; margin: 30px 0 15px; letter-spacing: 1px; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .checkbox-item { display: flex; align-items: center; padding: 12px; background: #fafafa; border-radius: 10px; border: 1px solid #eee; cursor: pointer; transition: 0.2s; }
+        .checkbox-item:hover { background: var(--verde-claro); }
+        .checkbox-item input { margin-right: 12px; width: 20px; height: 20px; accent-color: var(--verde-elvora); }
+
+        /* MAPA CORPORAL INTERATIVO */
+        .map-section { display: flex; flex-direction: column; align-items: center; }
+        
+        .view-selector { display: flex; margin-bottom: 20px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd; }
+        .view-btn { padding: 12px 30px; border: none; background: white; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .view-btn.active { background: var(--verde-elvora); color: white; }
+
+        .body-map-container {
+            position: relative;
+            width: 320px; 
+            height: 600px;
+            background-color: #f8f8f8;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .body-image {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* PONTOS DE CLIQUE (HOTSPOTS) */
+        .hotspot {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: rgba(198, 176, 10, 0.3);
+            border: 2px solid var(--dourado);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .hotspot:hover { background: rgba(198, 176, 10, 0.6); transform: scale(1.2); }
+        .hotspot.selected { background: var(--verde-elvora); border-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+        .hotspot.selected::after { content: "✓"; color: white; font-size: 14px; font-weight: bold; }
+
+        /* POSICIONAMENTO DOS PONTOS (FRENTE) */
+        .hotspot.frente[data-area="Pescoço"] { top: 19%; left: 45%; }
+        .hotspot.frente[data-area="Ombro D"] { top: 19%; left: 30%; }
+        .hotspot.frente[data-area="Ombro E"] { top: 19%; left: 60%; }
+        .hotspot.frente[data-area="Peitoral"] { top: 20%; left: 45%; }
+        .hotspot.frente[data-area="Abdômen"] { top: 36%; left: 45%; }
+        .hotspot.frente[data-area="Braço D"] { top: 35%; left: 22%; }
+        .hotspot.frente[data-area="Braço E"] { top: 35%; left: 68%; }
+        .hotspot.frente[data-area="Mão D"] { top: 50%; left: 22%; }
+        .hotspot.frente[data-area="Mão E"] { top: 50%; left: 68%; }
+        .hotspot.frente[data-area="Quadríceps D"] { top: 60%; left: 35%; }
+        .hotspot.frente[data-area="Quadríceps E"] { top: 60%; left: 55%; }
+        .hotspot.frente[data-area="Pé D"] { top: 87%; left: 30%; }
+        .hotspot.frente[data-area="Pé E"] { top: 87%; left: 57%; }
+
+
+        /* POSICIONAMENTO DOS PONTOS (COSTAS) */
+        .hotspot.costas[data-area="Pescoço"] { top: 15%; left: 45%; }
+        .hotspot.costas[data-area="Lombar"] { top: 35%; left: 45%; }
+        .hotspot.costas[data-area="Escápula D"] { top: 19%; left: 33%; }
+        .hotspot.costas[data-area="Escápula E"] { top: 19%; left: 57%; }
+        .hotspot.costas[data-area="Glúteo D"] { top: 60%; left: 35%; }
+        .hotspot.costas[data-area="Glúteo E"] { top: 60%; left: 55%; }
+        .hotspot.costas[data-area="Panturilha D"] { top: 75%; left: 33%; }
+        .hotspot.costas[data-area="Panturilha E"] { top: 75%; left: 55%; }
+        
+        .btn-enviar {
+            background: var(--verde-elvora); color: white; padding: 22px; border: none; border-radius: 15px; 
+            width: 100%; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-enviar:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(45, 90, 67, 0.2); }

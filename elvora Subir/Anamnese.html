@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamnese ELVORA 2.0</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/anamnese.css">
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <nav>
+        <img src="Imagem/Logo.png" class="logo-sidebar" alt="Elvora">
+            <a href="index.html" class="menu-item"><i class="fas fa-home"></i> Início</a>
+            <a href="Anamnese.html" class="menu-item active"><i class="fas fa-users"></i> Anamnese</a>
+        <div style="margin-top: auto; font-size: 0.7rem; color: #999; text-align: center;">ELVORA • Movimento • Recuperação</div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Anamnese <span style="font-weight: 300; opacity: 0.5;">Inteligente</span></h1>
+
+            <form id="anamneseForm">
+                <div class="form-card">
+                    <h2>Identificação</h2>
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label>Nome Completo:</label>
+                            <input type="text" name="nome" placeholder="Digite o nome do paciente" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Gênero:</label>
+                            <select id="generoSelect" name="genero" onchange="atualizarImagemCorpo()">
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                
+                                  
+                    <div class="grid-2">
+                        <div class="input-group">
+                            <label>Email:</label>
+                            <input type="email" name="email" placeholder="Digite o email do paciente" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone:</label>
+                            <input type="tel" name="telefone" placeholder="Digite o telefone do paciente" required>
+                        </div>
+                    </div>
+
+
+                                  
+                    <div class="grid-2">    
+                        <div class="input-group">
+                            <label>Idade:</label>
+                            <input type="number" name="idade" placeholder="Digite a idade do paciente">  
+                            <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Menores de 18 anos, é obrigatório a presença dos responsáveis.</p>
+                        </div>
+                    </div>
+                </div>  
+                
+                     <div></div>
+
+                <!-- QUESTIONÁRIO DE SAÚDE (RESTAURADO) -->
+                <div class="form-card">
+                    <h2>Saúde e Condições</h2>
+
+                    <div> 
+                        <!-- NOVA SEÇÃO: HISTÓRICO MÉDICO ADAPTADA -->
+<div class="form-card">
+    <h2>Histórico e Cuidados Especiais</h2>
+
+    <div class="input-group">
+        <label>Você tem alguma condição médica pré-existente?</label>
+        <div class="grid-2" style="margin-bottom: 15px;">
+            <label class="checkbox-item">
+                <input type="radio" name="condicao_medica" value="sim"> Sim
+            </label>
+            <label class="checkbox-item">
+                <input type="radio" name="condicao_medica" value="nao"> Não
+                
+            </label>
+        </div>
+    </div>
+
+    
+
+    <div class="input-group">
+        <label>Se sim, por favor, descreva sua condição médica:</label>
+        <textarea name="descricao_condicao_medica" rows="3" placeholder="Descreva sua condição médica aqui..."></textarea>
+         
+    </div>
+
+    <div class="grid-2" style="margin-top: 20px;">
+        <div class="input-group">
+            <label>Você está grávida?</label>
+            <div class="grid-2">
+                <label class="checkbox-item">
+                    <input type="radio" name="gravidez" value="sim"> Sim
+                </label>
+                <label class="checkbox-item">
+                    <input type="radio" name="gravidez" value="nao" checked> Não
+                </label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Tem alergia a óleos ou cremes?</label>
+            <div class="grid-2">
+                <label class="checkbox-item">
+                    <input type="radio" name="alergias" value="sim"> Sim
+                </label>
+                <label class="checkbox-item">
+                    <input type="radio" name="alergias" value="nao" checked> Não
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </div>
+                    
+                    <div class="section-title">MUSCULAR / ÓSSEO</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox"> Tendinite ou Bursite</label>
+                        <label class="checkbox-item"><input type="checkbox"> Artrite ou Gota</label>
+                        <label class="checkbox-item"><input type="checkbox"> Fibromialgia</label>
+                        <label class="checkbox-item"><input type="checkbox"> Osteoporose</label>
+                        <label class="checkbox-item"><input type="checkbox"> Hérnia de Disco</label>
+                        <label class="checkbox-item"><input type="checkbox"> Nenhuma das opções acima</label>
+                    </div>
+
+                    <div class="section-title">SISTEMA NERVOSO</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox"> Herpes Zoster</label>
+                        <label class="checkbox-item"><input type="checkbox"> Dor de cabeça</label>
+                        <label class="checkbox-item"><input type="checkbox"> Dor Crônica</label>
+                        <label class="checkbox-item"><input type="checkbox"> Esclerose múltipla</label>
+                        <label class="checkbox-item"><input type="checkbox"> Parkinson / Lúpus</label>
+                    </div>
+
+                    <div class="section-title">EMOCIONAL / MENTAL</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox"> Ansiedade / Estresse</label>
+                        <label class="checkbox-item"><input type="checkbox"> Depressão</label>
+                        <label class="checkbox-item"><input type="checkbox"> Distúrbios alimentares</label>
+                    </div>
+
+                    <div class="section-title">CIRCULATÓRIO</div>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox"> Pressão alta</label>
+                        <label class="checkbox-item"><input type="checkbox"> Linfodema ou Edemas</label>
+                        <label class="checkbox-item"><input type="checkbox"> Trombose ou Embolia</label>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2>Mapa Corporal</h2>
+                    <p style="color: #666; margin-bottom: 25px;">Toque diretamente no boneco para indicar os pontos de dor ou tensão.</p>
+                    
+                    <div class="map-section">
+                        <div class="view-selector">
+                            <button type="button" id="btnFrente" class="view-btn active" onclick="trocarVista('frente')">Frente</button>
+                            <button type="button" id="btnCostas" class="view-btn" onclick="trocarVista('costas')">Costas</button>
+                        </div>
+
+                        <div class="body-map-container" id="mapaContainer">
+                            <img src="Imagem/Corpo masculino frente.png" id="imgBoneco" class="body-image">
+                            
+                            <!-- PONTOS FRENTE -->
+                            <div class="hotspot frente" data-area="Pescoço" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Ombro D" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Ombro E" data-side="Frente" onclick="togglePonto(this)"></div>                            
+                            <div class="hotspot frente" data-area="Abdômen" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Braço D" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Braço E" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Quadríceps D" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Quadríceps E" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Mão D" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Mão E" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Pé D" data-side="Frente" onclick="togglePonto(this)"></div>
+                            <div class="hotspot frente" data-area="Pé E" data-side="Frente" onclick="togglePonto(this)"></div>
+
+                            <!-- PONTOS COSTAS (Iniciam escondidos via JS) -->
+                            <div class="hotspot costas" data-area="Pescoço" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Lombar" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Escápula D" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Escápula E" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Glúteo D" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Glúteo E" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Panturilha D" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                            <div class="hotspot costas" data-area="Panturilha E" data-side="Costas" onclick="togglePonto(this)" style="display: none;"></div>
+                        </div>
+
+                        <p id="areaSelecionada" style="margin-top: 15px; font-weight: bold; color: var(--verde-elvora);"></p>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-enviar">Salvar e enviar para confirmação</button>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Após salvar, você será direcionado ao WhatsApp. O agendamento será confirmado por telefone.</p>
+            </form>
+        </div>
+    </main>
+    <script src="js/anamnese.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmacao de agendamento ELVORA por WhatsApp e telefone.">
+    <title>ELVORA - Confirmacao</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/confirmacao.css">
+</head>
+<body>
+    <nav>
+        <img src="Imagem/Logo.png" class="logo-sidebar" alt="Elvora">
+        <a href="index.html" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+        <a href="Anamnese.html" class="menu-item"><i class="fas fa-users"></i> Anamnese</a>
+        <a href="Confirmacao.html" class="menu-item active"><i class="fab fa-whatsapp"></i> Confirmacao</a>
+
+        <div class="sidebar-footer">ELVORA &bull; Movimento &bull; Recuperacao</div>
+    </nav>
+
+    <main>
+        <section class="confirmacao-card">
+            <div class="icon-circle">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+
+            <p class="eyebrow">Ficha recebida</p>
+            <h1>Envie sua solicitacao pelo WhatsApp</h1>
+            <p class="lead">Seu agendamento ainda sera confirmado por telefone. Nossa equipe entrara em contato para validar o melhor horario e finalizar a confirmacao.</p>
+
+            <div class="resumo" id="resumoAtendimento">
+                <span>Carregando dados do atendimento...</span>
+            </div>
+
+            <a id="whatsappLink" class="whatsapp-btn" href="#" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                Enviar pelo WhatsApp
+            </a>
+
+            <a class="secondary-link" href="index.html#servicos">Escolher outro servico</a>
+        </section>
+    </main>
+
+    <script src="js/confirmacao.js"></script>
+</body>
+</html>

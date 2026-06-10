@@ -1,0 +1,33 @@
+﻿        :root { --verde-elvora: #2D5A43; --dourado: #C6B00A; --texto: #333; }
+        body { font-family: 'Inter', sans-serif; margin: 0; display: flex; height: 100vh; background-color: #f9f9f7; }
+
+        /* SIDEBAR */
+        nav { width: 280px; background: white; border-right: 1px solid #eee; display: flex; flex-direction: column; padding: 25px; }
+        .logo-sidebar { width: 100%; max-width: 220px; margin-bottom: 35px; }
+        .menu-item { text-decoration: none; color: #666; padding: 14px 18px; margin-bottom: 5px; border-radius: 10px; display: flex; align-items: center; }
+        .menu-item.active { background-color: var(--verde-elvora); color: white; }
+        .menu-item i { margin-right: 12px; width: 20px; text-align: center; }
+
+        /* CONTEÚDO */
+        main { flex: 1; padding: 40px; position: relative; background-image: url('../Imagem/chat GPT fundo.png'); background-size: cover; background-attachment: fixed; }
+        main::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.9); z-index: 1; }
+        .container { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+
+        .payment-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+        h1 { font-family: 'Playfair Display', serif; color: var(--verde-elvora); font-size: 2.2rem; margin-bottom: 30px; }
+        
+        .resumo-box { background: #f8fbf9; padding: 25px; border-radius: 15px; border: 1px solid #eef2f0; margin-bottom: 30px; text-align: left; }
+        .resumo-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.1rem; }
+        .resumo-item span:last-child { max-width: 55%; text-align: right; font-weight: 600; }
+        .resumo-texto { align-items: flex-start; }
+        .resumo-total { border-top: 2px solid #eee; padding-top: 15px; margin-top: 15px; font-weight: bold; font-size: 1.4rem; color: var(--verde-elvora); display: flex; justify-content: space-between; }
+
+        .btn-mercado-pago {
+            background-color: #009EE3; /* Azul Oficial Mercado Pago */
+            color: white; padding: 20px; border: none; border-radius: 12px;
+            width: 100%; font-size: 1.2rem; font-weight: bold; cursor: pointer;
+            transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-mercado-pago:hover { background-color: #0081ba; transform: translateY(-3px); }
+
+        .metodos-img { width: 100%; max-width: 300px; margin-top: 20px; opacity: 0.7; }

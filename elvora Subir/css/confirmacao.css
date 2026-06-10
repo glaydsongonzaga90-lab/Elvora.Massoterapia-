@@ -1,0 +1,203 @@
+:root {
+    --verde-elvora: #2D5A43;
+    --verde-claro: rgba(45, 90, 67, 0.1);
+    --dourado: #C6B00A;
+    --texto: #333;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9f7;
+    color: var(--texto);
+}
+
+nav {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.logo-sidebar {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #666;
+    padding: 14px 18px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.menu-item.active {
+    background-color: var(--verde-elvora);
+    color: white;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu-item:hover:not(.active) {
+    background-color: var(--verde-claro);
+    color: var(--verde-elvora);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+main {
+    flex: 1;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('../Imagem/chat GPT fundo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.confirmacao-card {
+    position: relative;
+    z-index: 1;
+    width: min(720px, 100%);
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 42px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.icon-circle {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: var(--verde-elvora);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    margin-bottom: 18px;
+}
+
+.eyebrow {
+    color: var(--dourado);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--verde-elvora);
+    font-size: 2.6rem;
+    margin: 0 0 16px;
+}
+
+.lead {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.08rem;
+    max-width: 620px;
+    margin: 0 auto 28px;
+}
+
+.resumo {
+    background: #f8f8f5;
+    border: 1px solid #eee;
+    border-left: 4px solid var(--dourado);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 28px;
+    text-align: left;
+    color: #444;
+    line-height: 1.7;
+}
+
+.resumo strong {
+    color: var(--verde-elvora);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: min(360px, 100%);
+    padding: 17px 22px;
+    border-radius: 12px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 22px rgba(37, 211, 102, 0.22);
+}
+
+.secondary-link {
+    display: block;
+    margin-top: 18px;
+    color: var(--verde-elvora);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 820px) {
+    body {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+        min-height: auto;
+    }
+
+    main {
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .confirmacao-card {
+        padding: 28px 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,97 @@
+﻿        :root {
+            --verde-elvora: #2D5A43;
+            --verde-claro: rgba(45, 90, 67, 0.1);
+            --dourado: #C6B00A;
+            --texto: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f9f9f7;
+        }
+
+        /* MENU LATERAL */
+        nav {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            z-index: 10;
+        }
+        .logo-sidebar { width: 100%; max-width: 220px; margin-bottom: 30px; }
+        .menu-item {
+            text-decoration: none; color: #666; padding: 12px 15px; margin-bottom: 5px;
+            border-radius: 10px; display: flex; align-items: center; font-weight: 500; transition: 0.3s;
+        }
+        .menu-item.active { background-color: var(--verde-elvora); color: white; }
+        .menu-item i { margin-right: 12px; width: 20px; text-align: center; }
+
+        /* ÁREA PRINCIPAL */
+        main {
+            flex: 1; padding: 40px; overflow-y: auto; position: relative;
+            background-image: url('../Imagem/chat GPT fundo.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+        }
+        main::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.88); z-index: 1;
+        }
+        .container { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+
+        h1 { font-family: 'Playfair Display', serif; color: var(--verde-elvora); font-size: 2.5rem; margin-bottom: 5px; }
+        .subtitle { color: #666; margin-bottom: 30px; }
+
+        .form-card {
+            background: white; padding: 35px; border-radius: 20px;
+            margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee;
+        }
+
+        h2 { font-family: 'Playfair Display', serif; color: var(--verde-elvora); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+
+        /* SELETOR DE DATAS (CARROSSEL) */
+        .date-picker {
+            display: flex; gap: 12px; overflow-x: auto; padding-bottom: 15px; margin-bottom: 20px;
+            scrollbar-width: thin;
+        }
+        .date-item {
+            min-width: 80px; height: 100px; background: #fafafa; border: 1px solid #eee;
+            border-radius: 15px; display: flex; flex-direction: column; align-items: center;
+            justify-content: center; cursor: pointer; transition: 0.3s;
+        }
+        .date-item span:first-child { font-size: 0.8rem; text-transform: uppercase; color: #888; }
+        .date-item span:last-child { font-size: 1.4rem; font-weight: bold; color: var(--verde-elvora); }
+        .date-item:hover { background: var(--verde-claro); border-color: var(--verde-elvora); }
+        .date-item.active { background: var(--verde-elvora); border-color: var(--verde-elvora); }
+        .date-item.active span { color: white !important; }
+
+        /* GRID DE HORÁRIOS */
+        .time-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px;
+            margin-bottom: 25px;
+        }
+        .time-slot {
+            padding: 15px; background: white; border: 1px solid #ddd; border-radius: 12px;
+            text-align: center; font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .time-slot:hover:not(.disabled) { border-color: var(--dourado); background: var(--verde-claro); color: var(--verde-elvora); }
+        .time-slot.selected { background: var(--verde-elvora); color: white; border-color: var(--verde-elvora); }
+        .time-slot.disabled { background: #f0f0f0; color: #ccc; cursor: not-allowed; border-color: #eee; }
+
+        .period-title { font-size: 0.9rem; font-weight: bold; color: var(--dourado); margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .btn-agendar {
+            background: var(--verde-elvora); color: white; padding: 20px; border: none; border-radius: 15px; 
+            width: 100%; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .btn-agendar:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(45, 90, 67, 0.2); }
+
+        .selection-summary {
+            background: var(--verde-claro); padding: 15px; border-radius: 12px; margin-top: 20px;
+            display: none; border: 1px solid rgba(45, 90, 67, 0.2);
+        }
