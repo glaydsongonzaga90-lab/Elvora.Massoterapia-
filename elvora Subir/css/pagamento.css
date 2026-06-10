@@ -1,4 +1,4 @@
-﻿        :root { --verde-elvora: #2D5A43; --dourado: #C6B00A; --texto: #333; }
+﻿       :root { --verde-elvora: #2D5A43; --dourado: #C6B00A; --texto: #333; }
         body { font-family: 'Inter', sans-serif; margin: 0; display: flex; height: 100vh; background-color: #f9f9f7; }
 
         /* SIDEBAR */
@@ -31,3 +31,59 @@
         .btn-mercado-pago:hover { background-color: #0081ba; transform: translateY(-3px); }
 
         .metodos-img { width: 100%; max-width: 300px; margin-top: 20px; opacity: 0.7; }
+
+        @media (max-width: 820px) {
+            body {
+                display: block;
+                height: auto;
+                min-height: 100vh;
+                overflow: auto;
+            }
+
+            nav {
+                width: 100%;
+                box-sizing: border-box;
+                border-right: 0;
+                border-bottom: 1px solid #eee;
+                padding: 14px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .logo-sidebar {
+                width: 78px;
+                margin: 0 8px 0 0;
+            }
+
+            .menu-item {
+                margin: 0;
+                padding: 10px 12px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+            }
+
+            .menu-item i {
+                margin-right: 8px;
+            }
+
+            main {
+                min-height: auto;
+                padding: 24px 16px;
+                overflow: visible;
+                background-attachment: scroll;
+            }
+
+            main::before {
+                position: fixed;
+            }
+
+            .payment-card {
+                padding: 28px 18px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
