@@ -1,7 +1,3 @@
-localStorage.removeItem('elvora_atendimento');
-localStorage.removeItem('servico_nome');
-localStorage.removeItem('servico_preco');
-
 const ATENDIMENTO_KEY = 'elvora_atendimento';
 
 function carregarAtendimento() {
