@@ -82,7 +82,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzhIjxDFc2XuHnvQD9ID9
 const form = document.getElementById('anamneseForm');
 const atendimentoInicial = carregarAtendimento();
 
-if (!atendimentoInicial.servico || !atendimentoInicial.preco) {
+if (!atendimentoInicial.servico) {
     alert('Escolha um servico antes de preencher a anamnese.');
     window.location.href = 'index.html#servicos';
 }
