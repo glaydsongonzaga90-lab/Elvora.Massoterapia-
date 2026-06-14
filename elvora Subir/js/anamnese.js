@@ -8,6 +8,28 @@ function salvarAtendimento(atendimento) {
     localStorage.setItem(ATENDIMENTO_KEY, JSON.stringify(atendimento));
 }
 
+function completarAtendimentoPelaUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const servico = params.get('servico');
+    const preco = params.get('preco');
+
+    if (!servico || !preco) {
+        return carregarAtendimento();
+    }
+
+    const atendimento = carregarAtendimento();
+    const atendimentoAtualizado = {
+        ...atendimento,
+        servico: servico,
+        preco: preco,
+        duracao: '60 minutos',
+        cliente: null
+    };
+
+    salvarAtendimento(atendimentoAtualizado);
+    return atendimentoAtualizado;
+}
+
 // --- LOGICA VISUAL ---
 window.vistaAtual = 'frente';
 let pontosSelecionados = [];
