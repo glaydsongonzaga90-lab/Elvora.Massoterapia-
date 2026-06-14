@@ -11,7 +11,7 @@ function formatarLista(itens) {
 const atendimento = carregarAtendimento();
 const cliente = atendimento.cliente || {};
 const resumo = document.getElementById('resumoAtendimento');
-const whatsappLink = document.getElementById('whatsappLink');
+const whatsappLink = document.getElementById('https://wa.me/5531997911314');
 
 const servico = atendimento.servico || 'Servico nao informado';
 const preco = atendimento.preco ? `R$ ${atendimento.preco}` : 'Preco nao informado';
