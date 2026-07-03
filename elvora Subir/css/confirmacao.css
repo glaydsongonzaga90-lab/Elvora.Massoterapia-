@@ -154,7 +154,7 @@ h1 {
     color: var(--verde-elvora);
 }
 
-.whatsapp-btn {
+.btn-whatsapp {
     display: inline-flex;
     align-items: center;
     justify-content: center;
